@@ -1,0 +1,122 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {overflow:hidden; }
+
+.scene {
+    width:100vw;
+    height:100vh;
+    position:relative;
+    background: linear-gradient(180deg, #1a0a2e 0%, #4a1942 50%, #7a2d5c 100%);
+    overflow:hidden;
+}
+
+.moon {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    width: 80px;
+    height: 80px;
+    background: redial-gradient(circle, #fff9e6, #ffe4b5);
+    border-radius: 50%;
+    box-shadow: 0 0 60px 20px rgba(255,228,181,0.5);
+
+}
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 40px;
+    height:280px;
+    background: linear-gradient(to top, #2b1810, #4a2c1a);
+    border-radius: 20px 20px 0 0;
+    transform: rotate(-3deg);
+}
+
+.branch {
+    position: absolute;
+    background: linear-gradient(to right, #4a2c1a, #2b1810);
+    border-radius: 20px;
+
+}
+
+.branch-1 {
+    width: 150px;
+    height: 18px;
+    top: 40px; left: 20px;
+    transform: rotate(-35deg);
+}
+
+.branch-2 {
+    width: 180px;
+    height: 16px;
+    top: 90px;
+    left: -140px;
+    transform: rotate(25deg);
+}
+
+.branch-3 {
+    width: 120px;
+    height: 14px;
+    top: 130px;
+    left: 30px;
+    transform: rotate(-50deg);
+}
+
+.branch::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 60%;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #ffd1dc, #ff8fab);
+    border-radius: 50%;
+    box-shadow: 
+        30px -10px 0 -px #ffc9de,
+        -25px 10px 0 -5px #ff9ebb,
+        15px 20px 0 -4px #ffd1dc,
+        -10px -20px 0 -6px #ff8fab,
+        45px 5px 0 -7px #ffc9de,
+        -45px -5px 0 -5px #ff9ebb;
+
+}
+
+.petals-container {
+    position: absolute;
+    top: 0; width: 100%;
+    left: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    top: -5%;
+    background: linear-gradient(135deg,#ffd1dc, #ff8fab);
+    border-radius: 0% 100% 0% 100%;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, -10vh) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(40px, 25vh) rotate(90deg);
+    
+    }
+    50% {
+        transform: translate(-40px, 50vh) rotate(180deg);
+    }
+    75% {
+        transform: translate(40px, 75vh) rotate(270deg);
+    }
+    100% {
+        transform: translate(-20px, 110vh) rotate(360deg);
+        opacity: 0.8;
+    }
+}
